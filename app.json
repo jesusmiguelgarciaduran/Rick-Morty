@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "rick-morty",
+    "slug": "rick-morty",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}

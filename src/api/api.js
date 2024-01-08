@@ -1,6 +1,5 @@
 import React from 'react';
 import Home from '../pages/home';
-
 export default class Api extends React.Component{
     constructor(props){
         super(props);
@@ -12,16 +11,17 @@ export default class Api extends React.Component{
             urlPrev:'',
             urlNext:''
         }
+
     }
 
     componentDidMount(){
-        this.getPersonajes()
+        this.getPersonajes(this.state.url)
     }
 
-    getPersonajes = () =>{
+     getPersonajes = (url) =>{
         this.setState({loading:true})
 
-        fetch(this.state.url)
+        fetch(url)
         .then(res => res.json())
         .then(res =>{
             this.setState({
@@ -34,10 +34,10 @@ export default class Api extends React.Component{
     }
 
     setUrlNext = () =>{
-        this.setState({url:this.state.urlNext})
+        this.getPersonajes(this.state.urlNext)
     }
     setUrlPrev = () =>{
-        this.setState({url:this.state.urlPrev})
+        this.getPersonajes(this.state.urlPrev)
     }
 
     render(){
@@ -48,7 +48,10 @@ export default class Api extends React.Component{
             url={this.state.url}
             urlPrev={this.state.urlPrev?false:true}
             urlNext={this.state.urlNext?false:true}
+            setUrlNext={this.setUrlNext}
+            setUrlPrev={this.setUrlPrev}
             />
+            
         );
     };
 }

@@ -3,7 +3,6 @@ import Home from '../pages/home';
 export default class Api extends React.Component{
     constructor(props){
         super(props);
-
         this.state = {
             loading:false,
             personajes:[],
@@ -11,7 +10,6 @@ export default class Api extends React.Component{
             urlPrev:'',
             urlNext:''
         }
-
     }
 
     componentDidMount(){
@@ -36,6 +34,7 @@ export default class Api extends React.Component{
     setUrlNext = () =>{
         this.getPersonajes(this.state.urlNext)
     }
+    
     setUrlPrev = () =>{
         this.getPersonajes(this.state.urlPrev)
     }

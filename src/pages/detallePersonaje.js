@@ -1,11 +1,10 @@
 import React from 'react';
-import { StyleSheet, Image, Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
 import styles from '../styles/mainStyles';
 import { ScrollView } from 'react-native-gesture-handler';
 export default function DetallePersonaje({ route }) {
     return (
         <View style={[styles.container]}>
-
             <ScrollView style={[styles.listCharacter]}>
                 <View style={[styles.headerCharacter]}>
                     <View>
@@ -21,7 +20,6 @@ export default function DetallePersonaje({ route }) {
                             }} />
                     </View>
                 </View>
-
                 <View>
                     <ScrollView style={[styles.informationCharacter]}>
                     <Text style={[styles.names]}>{route.params.name? route.params.name : 'Nombre desconocido'}</Text>
@@ -50,14 +48,6 @@ export default function DetallePersonaje({ route }) {
                     </ScrollView>
                 </View>
             </ScrollView>
-
-
-
-
-
-
-
-
         </View>
 
     )
